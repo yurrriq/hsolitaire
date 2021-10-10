@@ -1,0 +1,30 @@
+name: hsolitaire
+version: !include "./VERSION"
+synopsis: Solitaire, written in Haskell, for my own edification
+author: Eric Bailey
+maintainer: eric@ericb.me
+git: https://git.sr.ht/~yurrriq/hsolitaire
+dependencies:
+- base
+- mtl
+default-extensions:
+- OverloadedStrings
+- TemplateHaskell
+ghc-options:
+- -Wall
+- -Werror
+- -Wincomplete-patterns
+- -Wincomplete-uni-patterns
+library:
+  source-dirs: lib
+  dependencies:
+  - lens
+  - monad-logger
+executable:
+  ghc-options:
+  - -O2
+  source-dirs: app
+  main: Main.hs
+  dependencies:
+  - hsolitaire
+  - optparse-applicative

@@ -9,12 +9,15 @@ data Card = Card
 instance Ord Card where
   compare (Card lhs _) (Card rhs _) = compare lhs rhs
 
+instance Show Card where
+  show (Card value suit) = show value <> show suit
+
 data Suit
   = Clubs
   | Diamonds
   | Hearts
   | Spades
-  deriving (Eq)
+  deriving (Bounded, Enum, Eq)
 
 instance Show Suit where
   show Clubs = "C"
@@ -50,7 +53,7 @@ data Face
   | Queen
   | King
   | Ace
-  deriving (Enum, Eq, Ord)
+  deriving (Bounded, Enum, Eq, Ord)
 
 instance Show Face where
   show Jack = "J"

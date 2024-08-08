@@ -1,4 +1,6 @@
 module Main (main) where
 
+import Data.Solitaire (fullDeck, shuffleM)
+
 main :: IO ()
-main = putStrLn "Hello, world!"
+main = shuffleM fullDeck >>= print

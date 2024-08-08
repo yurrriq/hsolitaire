@@ -14,6 +14,7 @@ ghc-options:
 library:
   source-dirs: lib
   dependencies:
+    - finite-typelits
     - random-shuffle
 executable:
   ghc-options:
